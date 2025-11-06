@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    container_name: sveltekit_app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"  # SvelteKit
+      - "5555:5555"  # Prisma Studio
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@db:5432/myapp?schema=public"
+    command: npm run dev -- --host 0.0.0.0 --open false
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: myapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
