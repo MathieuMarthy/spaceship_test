@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // ou "mysql" selon ton SGBD
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        BigInt   @id @default(autoincrement())
+  username  String
+  email     String   @unique
+  password  String
+  photo     String
+  linkedin  String
+  vaisseau  String
+  points    BigInt
+
+  badges    UserBadge[]
+}
+
+model Badge {
+  id          BigInt   @id @default(autoincrement())
+  logo        String
+  name        String
+  description String
+
+  categories  Category[]
+  users       UserBadge[]
+}
+
+model UserBadge {
+  user_id  BigInt
+  badge_id BigInt
+
+  user  User  @relation(fields: [user_id], references: [id])
+  badge Badge @relation(fields: [badge_id], references: [id])
+
+  @@id([user_id, badge_id])
+}
+
+model Category {
+  id          BigInt   @id @default(autoincrement())
+  name        String
+  summary     String
+  description String
+  badge_id    BigInt
+
+  badge  Badge  @relation(fields: [badge_id], references: [id])
+  games  Game[]
+}
+
+model News {
+  id          BigInt   @id @default(autoincrement())
+  titre       String
+  description String
+  photo       String
+  redirection String?
+}
+
+model Game {
+  id          BigInt   @id @default(autoincrement())
+  name        String
+  description String
+  category_id BigInt
+
+  category Category @relation(fields: [category_id], references: [id])
+}
