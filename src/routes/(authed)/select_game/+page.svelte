@@ -1,1 +1,0 @@
-<h1 class="text-3xl font-bold">Choix des jeux</h1>

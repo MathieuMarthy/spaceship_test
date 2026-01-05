@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/img/favicon.svg';
+	import icon from '$lib/assets/img/icon.png';
 	
 	let { children, data } = $props();
 </script>
@@ -9,22 +10,33 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<nav class="bg-orange-300">
-	<ul class="flex gap-4 p-4">
-		<li><a href="/">Accueil</a></li>
+<header class="flex flex-row justify-between p-4 bg-orange-300 ">
+	<!-- Logo -->
+	 <a href="/"><img class="h-15" src="{icon}" alt="" ></a>
 
+	<!-- Navigation / catégories -->
+	<nav>
+		<ul class="flex gap-4 p-4">
+			{#if data.user}
+				<li><a href="/vessel">Vaisseau</a></li>
+			{/if}
+			<li><a href="/news">Articles</a></li>
+		</ul>
+	</nav>
+
+	<!-- Login/Compte -->
+	<ul class="flex justify-end gap-4 p-4">
 		{#if data.user}
-			<li><a href="/manage_account">Gérer le compte</a></li>
-			<li><a href="/select_game">Choix du jeu</a></li>
+			<li><a href="/manage_account">Profil</a></li>
+			<li><form method="POST" action="/logout">
+				<button>Déconnexion</button>
+			</form></li>
 		{:else}
 			<li><a href="/login">Connexion</a></li>
 			<li><a href="/register">Inscription</a></li>
 		{/if}
-
-		
-		<li><a href="/news">Articles</a></li>
 	</ul>
-</nav>
+</header>
 
 <main>
 	{@render children()}
