@@ -25,8 +25,9 @@ model Badge {
   logo        String
   name        String
   description String
+  tier String
 
-  categories  Category[]
+  games  Game[]
   users       UserBadge[]
 }
 
@@ -45,9 +46,7 @@ model Category {
   name        String
   summary     String
   description String
-  badge_id    BigInt
 
-  badge  Badge  @relation(fields: [badge_id], references: [id])
   games  Game[]
 }
 
@@ -64,6 +63,9 @@ model Game {
   name        String
   description String
   category_id BigInt
+  badge_id    BigInt
+  points_reward BigInt
 
+  badge  Badge  @relation(fields: [badge_id], references: [id])
   category Category @relation(fields: [category_id], references: [id])
 }
