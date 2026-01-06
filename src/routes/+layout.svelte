@@ -11,34 +11,35 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header class="flex flex-row justify-between p-4 bg-orange-300 ">
+<header class="flex flex-row justify-between items-center p-2
+			 bg-orange-300 mb-2">
 	<!-- Logo -->
 	 <a href="/"><img class="h-15" src="{icon}" alt="" ></a>
 
 	<!-- Navigation / catégories -->
 	<nav>
-		<ul class="flex gap-4 p-4">
+		<ul class="flex gap-5">
 			{#if data.user}
-				<li><a href="/vessel">Vaisseau</a></li>
-				<li><a href="/badges">Badges</a></li>
-				<li><a href="/ranking">Classement</a></li>				
+				<li class="p-2"><a href="/vessel">Vaisseau</a></li>
+				<li class="p-2"><a href="/badges">Badges</a></li>
+				<li class="p-2"><a href="/ranking">Classement</a></li>
 			{/if}
-			<li><a href="/news">Articles</a></li>
+			<li class="p-2"><a href="/news">Articles</a></li>
 		</ul>
 	</nav>
 
 	<!-- Login/Compte/Notifications -->
-	<ul class="flex justify-end gap-4 p-4">
+	<ul class="flex items-center gap-5">
 		{#if data.user}
 			<!-- https://www.svgrepo.com/svg/532088/bell -->
-			<li><a href="/notifications"><img class="h-5" src="{notification_icon}" alt=""></a></li>
-			<li><a href="/manage_account">Profil</a></li>
-			<li><form method="POST" action="/logout">
+			<li class="p-2"><a href="/notifications"><img class="h-5" src="{notification_icon}" alt=""></a></li>
+			<li class="p-2"><a href="/manage_account">Profil</a></li>
+			<li class="p-2"><form method="POST" action="/logout">
 				<button>Déconnexion</button>
 			</form></li>
 		{:else}
-			<li><a href="/login">Connexion</a></li>
-			<li><a href="/register">Inscription</a></li>
+			<li class="p-2"><a href="/login">Connexion</a></li>
+			<li class="p-2"><a href="/register">Inscription</a></li>
 		{/if}
 	</ul>
 </header>
@@ -47,7 +48,8 @@
 	{@render children()}
 </main>
 
-<footer class="flex justify-center gap-10 text-center items-center p-4 bg-gray-200">
+<footer class="flex flex-row justify-center text-center items-center 
+			   gap-20 p-8 mt-2 bg-orange-300">
 	<p>© 2025 Spaceship Inc.</p>
 	
 	<ul class="flex flex-col gap-1 p-2">
@@ -57,7 +59,7 @@
 	</ul>
 
 	<!-- Réseaux -->
-	<ul class="flex flex-col gap-1 p-4">
+	<ul class="flex flex-col gap-1 p-2">
 		<li><a href="https://www.linkedin.com" target="_blank">Linkedin</a></li>
 		<li><a href="https://x.com" target="_blank">X</a></li>
 		<li><a href="https://youtube.com" target="_blank">Youtube</a></li>
