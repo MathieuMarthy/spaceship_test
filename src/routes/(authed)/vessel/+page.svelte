@@ -1,5 +1,5 @@
 <script lang="ts">
-	import vessel from '$lib/assets/img/vessel/vessel.jfif';
+	import vessel from '$lib/assets/img/vessel/vessel.webp';
 </script>
 
 <h1 class="text-3xl font-bold">Vaisseau</h1>
