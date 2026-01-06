@@ -34,6 +34,27 @@ export const UserRepository = {
       skipDuplicates: true,
     });
   },
+
+  async addGameRewardPoints(userId: bigint, gameId: bigint) {
+    return prisma.$transaction(async (tx) => {
+      const game = await tx.game.findUnique({
+        where: { id: gameId },
+      });
+
+      if (!game) {
+        throw new Error('Game not found');
+      }
+
+      return tx.user.update({
+        where: { id: userId },
+        data: {
+          points: {
+            increment: game.points_reward,
+          },
+        },
+      });
+    });
+  },
   
   create(data: {
     username: string;

@@ -5,6 +5,21 @@ export const NewsRepository = {
     return prisma.news.findMany();
   },
 
+  findById(id: bigint) {
+    return prisma.user.findUnique({
+      where: { id }
+    });
+  },
+
+  findLatest(limit: number) {
+    return prisma.news.findMany({
+      orderBy: {
+        id: 'desc',
+      },
+      take: limit,
+    });
+  },
+
   create(data: {
     titre: string;
     description: string;

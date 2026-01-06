@@ -9,12 +9,9 @@ export const GameRepository = {
     });
   },
 
-  findLatest(limit: number) {
-    return prisma.news.findMany({
-      orderBy: {
-        id: 'desc',
-      },
-      take: limit,
+  findById(id: bigint) {
+    return prisma.game.findUnique({
+      where: { id }
     });
   },
 
@@ -22,6 +19,8 @@ export const GameRepository = {
     name: string;
     description: string;
     category_id: bigint;
+    badge_id: bigint;
+    points_reward: bigint
   }) {
     return prisma.game.create({ data });
   },
