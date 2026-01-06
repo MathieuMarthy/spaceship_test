@@ -11,6 +11,12 @@ export const UserRepository = {
     });
   },
 
+  findByMail(email: string) {
+    return prisma.user.findUnique({
+      where: { email }
+    });
+  },
+
   getTopUsers(limit: number) {
     return prisma.user.findMany({
       orderBy: {
@@ -62,8 +68,9 @@ export const UserRepository = {
     password: string;
     photo: string;
     linkedin: string;
-    vaisseau: string;
     points: bigint;
+    rank: string
+    crewId: BigInt
   }) {
     return prisma.user.create({ data });
   },

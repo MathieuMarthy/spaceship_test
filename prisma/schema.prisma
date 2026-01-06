@@ -7,6 +7,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Crew {
+  id    BigInt  @id @default(autoincrement())
+  name  String
+  vaisseau String
+
+  users User[]
+}
+
+
 model User {
   id        BigInt   @id @default(autoincrement())
   username  String
@@ -14,9 +23,11 @@ model User {
   password  String
   photo     String
   linkedin  String
-  vaisseau  String
   points    BigInt
+  rank      String
+  crewId    BigInt?
 
+  crew      Crew?   @relation(fields: [crewId], references: [id])
   badges    UserBadge[]
 }
 
@@ -25,7 +36,7 @@ model Badge {
   logo        String
   name        String
   description String
-  tier String
+  tier        String
 
   games  Game[]
   users       UserBadge[]
