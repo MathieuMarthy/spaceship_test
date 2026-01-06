@@ -1,4 +1,17 @@
-Guide : https://svelte.dev/tutorial/kit/handle
+import { auth } from '$lib/server/auth';
+
 export async function handle({ event, resolve }) {
-	return await resolve(event);
+  const sessionId = event.cookies.get('session');
+
+  if (!sessionId) {
+    event.locals.user = null;
+    return resolve(event);
+  }
+
+  const { user, session } = await auth.validateSession(sessionId);
+
+  event.locals.user = user;
+  event.locals.session = session;
+
+  return resolve(event);
 }

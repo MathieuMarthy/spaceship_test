@@ -1,5 +1,5 @@
-export const load = async ({ cookies }) => {
-	return {
-		user: cookies.get('logged_in')
-	};
-};
+export function load({ locals }) {
+  return {
+    user: locals.user
+  };
+}
