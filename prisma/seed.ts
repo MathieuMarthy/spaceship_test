@@ -7,15 +7,19 @@ async function main() {
       username: 'admin',
       email: 'admin@example.com',
       password: 'password',
-      photo: '',
-      linkedin: '',
-      vaisseau: '',
+      photo: 'photo',
+      linkedin: 'linkedin',
+      vaisseau: 'vaisseau-01',
       points: 0
     },
   });
 }
-
 main()
-  .then(() => console.log('Database seeded!'))
-  .catch((e) => console.error(e))
-  .finally(() => prisma.$disconnect());
+  .then(async () => {
+    await prisma.$disconnect()
+  })
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })

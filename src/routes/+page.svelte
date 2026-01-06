@@ -1,2 +1,9 @@
+<script>
+	import img_hello from '$lib/assets/hello.jpeg';
+</script>
+
 <h1 class="text-3xl font-bold">Page d'acceuil</h1>
-<p class="hover:bg-sky-700">Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<p>Bienvenue</p>
+<p>Exemple :</p>
+<img alt="coucou" src={img_hello} class="h-30"/>
+

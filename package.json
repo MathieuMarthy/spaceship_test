@@ -4,8 +4,8 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-  		"dev": "vite dev --host 0.0.0.0 --open false",
-  		"build": "vite build",
+		"dev": "vite dev --host 0.0.0.0 --open false",
+		"build": "vite build",
 		"preview": "vite preview",
 		"db:reset": "prisma migrate reset --force && tsx prisma/seed.ts",
 		"prepare": "svelte-kit sync || echo ''",
@@ -23,10 +23,12 @@
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.14",
+		"@types/node": "^25.0.3",
 		"prisma": "^6.19.0",
 		"svelte": "^5.41.0",
 		"svelte-check": "^4.3.3",
 		"tailwindcss": "^4.1.14",
+		"tsx": "^4.21.0",
 		"typescript": "^5.9.3",
 		"vite": "^7.1.10"
 	},
