@@ -11,8 +11,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header class="flex flex-row justify-between items-center p-2
-			 bg-orange-300 mb-2">
+<header class="flex flex-row justify-between items-center gap-20 px-8 py-2 
+			bg-gradient-to-br from-sky-600 to-sky-500">
 	<!-- Logo -->
 	 <a href="/"><img class="h-15" src="{icon}" alt="" ></a>
 
@@ -33,12 +33,12 @@
 		{#if data.user}
 			<!-- https://www.svgrepo.com/svg/532088/bell -->
 			<li class="p-2"><a href="/notifications"><img class="h-5" src="{notification_icon}" alt=""></a></li>
-			<li class="p-2"><a href="/manage_account">Profil</a></li>
+			<li class="p-2 font-bold"><a href="/manage_account">Profil</a></li>
 			<li class="p-2"><form method="POST" action="/logout">
 				<button>Déconnexion</button>
 			</form></li>
 		{:else}
-			<li class="p-2"><a href="/login">Connexion</a></li>
+			<li class="p-2 font-bold"><a href="/login">Connexion</a></li>
 			<li class="p-2"><a href="/register">Inscription</a></li>
 		{/if}
 	</ul>
@@ -48,8 +48,8 @@
 	{@render children()}
 </main>
 
-<footer class="flex flex-row justify-center text-center items-center 
-			   gap-20 p-8 mt-2 bg-orange-300">
+<footer class="flex flex-row justify-around items-center text-center 
+			   bg-gradient-to-br from-sky-600 to-sky-500 gap-20 px-16 py-8">
 	<p>© 2025 Spaceship Inc.</p>
 	
 	<ul class="flex flex-col gap-1 p-2">
