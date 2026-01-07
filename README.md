@@ -16,3 +16,6 @@ docker exec -it sveltekit_app npx prisma studio --hostname 0.0.0.0 --port 5555
 ```
 npx prisma studio
 ```
+
+## Sources/license
+wiki Among Us sur Fandom pour carte "The Skeld".
