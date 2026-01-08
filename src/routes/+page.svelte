@@ -1,27 +1,42 @@
 <script>
 	import adnOuest from '$lib/assets/img/home/adnOuest.svg';
+	import welcome from '$lib/assets/hello.jpeg';
 </script>
 
 <head>
 	<title>Accueil - [nom du jeu]</title>
 </head>
 
-<div class="min-h-90 flex flex-col items-center justify-center p-6">
-	<h1 class="text-4xl font-bold text-white">Devenez un expert du numérique responsable avec [nom du jeu].</h1>
-	<p>En tant que commandant d'un vaisseau spatial isolé, vous devrez trouver des solutions à face à des problématiques du numérique.</p>
-	<p>
-		Serious game développé en lien avec
-		<a class="text-cyan-500" href="https://www.adnouest.org" target="_blank" rel="noopener noreferrer">
-			ADN Ouest
-		</a>.
-	</p>
+<main class="min-h-90 px-30 py-4 justify-center items-center">
+	<section class="flex flex-col items-center mb-10">
+		<div>
+			<h1 class="items-start text-5xl font-bold text-white">Devenez un expert du numérique responsable avec [localhost].</h1>
+			<p class="text-md text-white">En tant que commandant d'un vaisseau spatial isolé, vous devrez trouver des solutions à face à des problématiques du numérique.</p>
+		</div>
+	
+		<div class="relative flex flex-col items-center">
+			<img class="w-9/10 mt-6" src="{welcome}" alt="Image de présentation">
+	
+			<div class="absolute top-6 w-9/10 flex flex-col items-end">
+				<p class="text-white">
+					Serious game développé en lien avec
+					<a class="hover:underline" href="https://www.adnouest.org" target="_blank" rel="noopener noreferrer">
+						ADN Ouest
+					</a>. Adapté à tout les niveaux
+				</p>
+			</div>
+		
+			<div class="w-9/10 flex flex-row items-end gap-2 pl-10">
+				<a class="bg-gradient-to-br from-emerald-400 via-indigo-400 to-indigo-500  
+						  font-semibold px-5 py-2 rounded-lg shadow text-lg
+						  hover:bg-gradient-to-br hover:from-indigo-400 hover:via-indigo-500 hover:to-indigo-600" 
+					href="/register">Commencer l'aventure ici</a>
+			
+				<a class="text-white/80 text-sm hover:text-white hover:underline" href="/login">Déjà inscrit ? Connectez-vous ici</a>
+			</div>
+		</div>
+	</section>
 
-	<br>
-
-	<a href="/register">Commencer l'aventure ici</a>
-	<br>
-	<a href="/login">Déjà inscrit ? cliquez-ici</a>
-	<p>Adapté à tout les niveaux</p>
 
 	<hr>
 
@@ -56,4 +71,4 @@
 	L’association accompagne les étudiants et les professionnels à travers des événements,
 	des formations, des projets collaboratifs et des partenariats..
 	</p>
-</div>
+</main>

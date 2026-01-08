@@ -25,7 +25,7 @@
 					<li class="nav-link"><a href="/badges">Badges</a></li>
 					<li class="nav-link"><a href="/ranking">Classement</a></li>
 				{/if}
-				<!-- <li class="nav-link"><a href="/news">Articles</a></li> -->
+				<li class="nav-link"><a href="/news">Articles</a></li>
 			</ul>
 		</nav>
 	
