@@ -1,5 +1,5 @@
 <script>
-    import profile from '$lib/assets/img/user_white.png';
+    import profile from '$lib/assets/img/user-icon-white.svg';
     let passwordInput;
     let passwordConfirmInput;
     let showPassword = false;

@@ -1,10 +1,11 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
-@theme {  
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";  
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;  
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  
-    --color-dark: bg-gradient-to-br from-sky-800 via-sky-800 to-sky-950;
-    --color-light: bg-gradient-to-br from-sky-700 via-sky-700 to-sky-800;
+@layer components {
+    .nav-link {
+        @apply p-2 border-b-2 border-white/0 hover:border-orange-400 hover:text-orange-400;
+    };
+    .footer-link {
+        @apply p-2 hover:underline hover:text-white;
+    }
 }
