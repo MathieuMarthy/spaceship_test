@@ -9,7 +9,11 @@
     }
 </script>
 
-<div class="min-h-90 flex items-center justify-center p-6">
+<head>
+	<title>Connexion - [nom du jeu]</title>
+</head>
+
+<div class="min-h-90 flex flex-col items-center justify-center p-6">
     <main class="w-full max-w-lg p-8 mt-20 mb-20 rounded-tl-3xl rounded-br-3xl bg-white/10 border border-white/6 shadow-lg backdrop-blur-md">
         <div class="flex items-center gap-4 mb-10">
             <div class="w-20 h-20 flex items-center rounded-xl font-bold justify-center">
