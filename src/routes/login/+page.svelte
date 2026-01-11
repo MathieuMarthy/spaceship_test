@@ -1,9 +1,10 @@
 <script lang="ts">
     import profile from '$lib/assets/img/user-icon-white.svg';
+    export let form;
+
     let passwordInput;
     let showPassword = false;
-    
-    
+
     function togglePassword() {
         showPassword = !showPassword;
     }
@@ -24,7 +25,11 @@
                 <p class="text-sm text-sky-200">Accédez à votre tableau de bord</p>
             </div>
         </div>
-
+        {#if form?.error}
+        <div class="mb-4 rounded-lg bg-red-500/10 border border-red-500/30 px-4 py-2 text-red-200 text-sm">
+            {form.error}
+        </div>
+        {/if}
         <form method="post" class="space-y-4">
             <fieldset class="space-y-4 border-0 p-0">
                 <legend class="sr-only">Accéder à votre compte</legend>

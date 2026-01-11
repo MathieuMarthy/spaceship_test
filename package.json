@@ -24,7 +24,6 @@
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.14",
 		"@types/node": "^25.0.3",
-		"prisma": "^6.19.0",
 		"svelte": "^5.41.0",
 		"svelte-check": "^4.3.3",
 		"tailwindcss": "^4.1.14",
@@ -33,8 +32,11 @@
 		"vite": "^7.1.10"
 	},
 	"dependencies": {
-		"@prisma/client": "^6.19.0",
+		"@lucia-auth/adapter-prisma": "^4.0.1",
+		"@prisma/client": "^5.22.0",
+		"argon2": "^0.44.0",
 		"lucia": "^3.2.2",
-		"oslo": "^1.2.1"
+		"oslo": "^1.2.1",
+		"prisma": "^5.22.0"
 	}
 }

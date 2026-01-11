@@ -15,6 +15,13 @@ model Crew {
   users User[]
 }
 
+model Session {
+  id        String   @id
+  userId    BigInt
+  expiresAt DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
 
 model User {
   id        BigInt   @id @default(autoincrement())
@@ -29,6 +36,7 @@ model User {
 
   crew      Crew?   @relation(fields: [crewId], references: [id])
   badges    UserBadge[]
+  sessions  Session[]
 }
 
 model Badge {
