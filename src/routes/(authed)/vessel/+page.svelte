@@ -3,7 +3,6 @@
 	import type { Category } from '$lib/data/categories';
 
 	import vessel from '$lib/assets/img/vessel/vessel.avif';
-	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 
 	let width = 0;
@@ -11,15 +10,16 @@
 	let imgEl: HTMLImageElement;
 	let hoveredCategory: Category | null = null;
 
-	function goToCategory(name: string) {
-		goto('/category');
-	}
-
 	onMount(() => {
-		imgEl.onload = () => {
+		if (imgEl.complete) {
 			width = imgEl.naturalWidth;
 			height = imgEl.naturalHeight;
-		};
+		} else {
+			imgEl.onload = () => {
+				width = imgEl.naturalWidth;
+				height = imgEl.naturalHeight;
+			};
+		}
 	});
 </script>
 
@@ -40,7 +40,7 @@
 					bind:this={imgEl}
 					src={vessel}
 					alt="Plan du vaisseau"
-					class="w-full h-auto block"
+					class="w-225 h-auto block"
 				/>
 
 				{#if width && height}
@@ -50,44 +50,55 @@
 						preserveAspectRatio="xMidYMid meet"
 					>
 						{#each rooms as room}
-							<polygon
-								points={room.points}
+							<a href="/category/{room.category.link}"
+								tabindex="-1"
 								on:mouseenter={() => (hoveredCategory = room.category)}
 								on:mouseleave={() => (hoveredCategory = null)}
-								on:click={() => goToCategory(room.category.id)}
-								class="cursor-pointer hover:fill-blue-500/30 fill-blue-300/30"
-							/>
-						{/each}				
+							>
+								<polygon
+									class="cursor-pointer hover:fill-blue-500/30 fill-blue-300/30"
+									points={room.points}
+								/>
+							</a>
+						{/each}
 					</svg>
 				{/if}
 			</div>
 		</div>
 		<div>
-			<section class="border">
-				{#if hoveredCategory}
-					<p class="font-bold">{hoveredCategory.name}</p>
-					<p class="text-sm">
-						{hoveredCategory.description}
-					</p>
+			<section class="border" aria-live="polite" aria-atomic="true">
+				{#if hoveredCategory}	
+					<span class="font-bold">{hoveredCategory.name}</span>
+					<br>
+					<span class="text-sm" id={`desc-${hoveredCategory.id}`}>
+					{hoveredCategory.description}
+					</span>
 				{:else}
 					<p class="italic text-gray-400">
-						Survolez une salle du vaisseau
+					Survolez une salle du vaisseau
 					</p>
 				{/if}
 			</section>
-			<section class="border">
-				<h2>Catégories</h2>
+			<section class="border"
+				aria-live="polite"
+				aria-atomic="true"
+			>
+				<h2 class="font-bold">Catégories</h2>
 				<ul>
-					<li><a href="/category">Equipements</a></li>
-					<li><a href="/category">Formation</a></li>
-					<li><a href="/category">Sensibilisation</a></li>
-					<li><a href="/category">Accessibilité</a></li>
-					<li><a href="/category">Parcours UX</a></li>
-					<li><a href="/category">Usages</a></li>
-					<li><a href="/category">Services numériques</a></li>
-					<li><a href="/category">Achats</a></li>
-					<li><a href="/category">Fin de vie des équipements</a></li>
-				</ul>
+					{#each rooms as room}
+						<li on:mouseenter={() => (hoveredCategory = room.category)}
+							on:mouseleave={() => (hoveredCategory = null)}
+						>
+							<a href="/category/{room.category.link}"
+								on:focus={() => (hoveredCategory = room.category)}
+								on:blur={() => (hoveredCategory = null)}
+								aria-describedby={`desc-${room.category.id}`}
+							>
+								{room.category.name}
+							</a>
+						</li>
+					{/each}
+				</ul>	
 			</section>
 		</div>
 	</div>
