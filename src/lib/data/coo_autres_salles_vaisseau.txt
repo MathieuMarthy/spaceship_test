@@ -1,0 +1,19 @@
+<!-- Security -->
+<!-- <polygon on:click={() => goToCategory('equipements')}
+    points="2341,2581 2855,2581 2855,1734 2704,1583 2523,1583 2341,1765" 
+/> -->
+
+<!-- Oxygen -->
+<!-- <polygon on:click={() => goToCategory('equipements')}
+    points="2233,541,2233,761,2000,758,2000,666,2098,568,2098,541"
+/> -->
+
+<!-- Weapon -->
+<!-- <polygon on:click={() => goToCategory('equipements')}
+    points="2191,156,2342,156,2477,294,2482,490,2254,490,2188,426"
+/> -->
+
+<!-- Shield -->
+<!-- <polygon on:click={() => goToCategory('equipements')}
+    points="2479,1049,2479,1242,2342,1382,2191,1382,2188,1115,2254,1049"
+/> -->		

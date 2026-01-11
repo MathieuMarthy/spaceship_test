@@ -1,7 +1,6 @@
 <script>
     import profile from '$lib/assets/img/user-icon-white.svg';
     let passwordInput;
-    let passwordConfirmInput;
     let showPassword = false;
 
     function togglePassword() {
@@ -108,8 +107,7 @@
                 <label for="password" class="block text-md mb-1 font-bold text-white">Confirmez le mot de passe</label>
                 <div class="relative mb-10">
                     <input
-                        bind:this={passwordConfirmInput}
-                        type={showPassword ? 'text' : 'password'}
+                        type='password'
                         id="password_confirm"
                         name="password_confirm"
                         autocomplete="new-password"
@@ -119,15 +117,6 @@
                         bg-white/3 border border-white/6 text-white placeholder-sky-200/50 
                         focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
-                    <button
-                        type="button"
-                        aria-pressed={showPassword}
-                        on:click={togglePassword}
-                        class="absolute right-2 top-1/2 -translate-y-1/2 text-sm 
-                        bg-white/6 px-3 py-1 rounded-md text-white hover:bg-white/20"
-                    >
-                        {showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
-                    </button>
                 </div>
         
                 <div class="flex flex-row items-center justify-end mb-10">
