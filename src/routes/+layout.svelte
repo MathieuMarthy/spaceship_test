@@ -11,7 +11,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="bg-gradient-to-br from-sky-700 via-sky-800 to-sky-800">
+<div class="min-h-screen flex flex-col bg-gradient-to-br from-sky-700 via-sky-800 to-sky-800">
 	<header class="flex flex-row justify-between items-center gap-20 px-8 py-2 
 				   bg-black/30 backdrop-blur-md shadow-2xl shadow-black/10 text-white text-lg">
 		<!-- Logo -->
@@ -33,7 +33,8 @@
 		<ul class="flex items-center gap-5">
 			{#if data.user}
 				<!-- https://www.svgrepo.com/svg/532088/bell -->
-				<a class="bg-amber-400 font-bold py-2 px-4 rounded text-white" href="/crew">Mon équipage</a>
+				<a class="bg-gradient-to-br from-amber-400 via-orange-400 to-orange-500 font-semibold px-4 py-2 rounded-md shadow text-lg text-black
+				hover:bg-gradient-to-br hover:from-orange-400 hover:via-orange-500 hover:to-orange-500 hover:underline" href="/crew">Mon équipage</a>
 				<li class="nav-link"><a href="/notifications"><img class="h-5" src="{notification_icon}" alt=""></a></li>
 				<li class="nav-link font-bold"><a href="/manage_account">Profil</a></li>
 				<li class="nav-link"><form method="POST" action="/logout">
@@ -46,7 +47,7 @@
 		</ul>
 	</header>
 	
-	<main class="mt-10 mb-10 ">
+	<main class="flex-1">
 		{@render children()}
 	</main>
 	
