@@ -1,6 +1,7 @@
 <script>
 	import adnOuest from '$lib/assets/img/home/adnOuest.svg';
-	// import background from '$lib/assets/img/home/background.svg';
+	import hello from '$lib/assets/hello.jpeg';
+	import background from '$lib/assets/img/home/background.svg';
 </script>
 
 <head>
@@ -39,7 +40,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-black/10 text-2xl">💻</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-black/10 text-2xl">💻</div>
 					<h3 class="text-lg font-semibold">Equipements</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Choix durable, maintenance et gestion du parc matériel.</p>
@@ -48,7 +49,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">🎓</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">🎓</div>
 					<h3 class="text-lg font-semibold">Formation</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Parcours et ressources pour monter en compétences.</p>
@@ -57,7 +58,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">🔔</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">🔔</div>
 					<h3 class="text-lg font-semibold">Sensibilisation</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Actions et communications pour mobiliser les équipes.</p>
@@ -66,7 +67,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">♿️</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">♿️</div>
 					<h3 class="text-lg font-semibold">Accessibilité</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Rendre les services utilisables par le plus grand nombre.</p>
@@ -75,7 +76,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">🧭</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">🧭</div>
 					<h3 class="text-lg font-semibold">Parcours UX</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Conception d’expériences claires et efficaces.</p>
@@ -84,7 +85,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">🔍</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">🔍</div>
 					<h3 class="text-lg font-semibold">Usages</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Analyse des comportements pour améliorer les services.</p>
@@ -93,7 +94,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">🖥️</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">🖥️</div>
 					<h3 class="text-lg font-semibold">Services numériques</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Conception et exploitation de services accessibles et responsables.</p>
@@ -102,7 +103,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">🛒</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">🛒</div>
 					<h3 class="text-lg font-semibold">Achats</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Approvisionnement responsable et critères de sélection.</p>
@@ -111,7 +112,7 @@
 			<article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white
 							hover:border-orange-400 hover:-translate-y-1">
 				<div class="flex items-center gap-4">
-					<div class="h-12 w-12 flex items-center justify-center rounded-md bg-white/10 text-2xl">♻️</div>
+					<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-white/10 text-2xl">♻️</div>
 					<h3 class="text-lg font-semibold">Fin de vie des équipements</h3>
 				</div>
 				<p class="mt-3 text-sm text-white/80">Recyclage, réemploi et réduction des déchets électroniques.</p>
@@ -119,8 +120,52 @@
         </section>
 	</section>
 
-	<section class="w-screen flex flex-col items-start px-72 pt-32 pb-4 bg-sky-950 shadow-sm">
-		news
+	<section class="w-screen flex flex-col items-center px-72 py-24 bg-sky-950 shadow-sm">
+		<h2 class="text-3xl font-semibold mb-16 text-white">Actualités</h2>
+		<section class="flex flex-row gap-8">
+			<article class="max-w-1/3 rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white">
+				<div class="flex flex-col items-start gap-4">
+					<h3 class="text-xl font-semibold">Titre</h3>
+					<div class="h-auto w-full flex items-center justify-center rounded-lg bg-black/10 p-2">
+						<img src={hello} alt="">
+					</div>
+				</div>
+				<p class="mt-3 text-sm text-white/80 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facere recusandae odio neque porro consectetur saepe, minus reiciendis laboriosam cum. Quidem error natus necessitatibus ducimus laudantium delectus assumenda possimus sunt..</p>
+				<a class="w-full flex justify-end text-white text-sm"
+					href="">Voir plus...</a>
+			</article>
+
+			<article class="max-w-1/3 rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white">
+				<div class="flex flex-col items-start gap-4">
+					<h3 class="text-xl font-semibold">Titre</h3>
+					<div class="h-auto w-full flex items-center justify-center rounded-lg bg-black/10 p-2">
+						<img src={hello} alt="">
+					</div>
+				</div>
+				<p class="mt-3 text-sm text-white/80 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facere recusandae odio neque porro consectetur saepe, minus reiciendis laboriosam cum. Quidem error natus necessitatibus ducimus laudantium delectus assumenda possimus sunt..</p>
+				<a class="w-full flex justify-end text-white text-sm"
+					href="">Voir plus...</a>
+			</article>
+
+			<article class="max-w-1/3 rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white">
+				<div class="flex flex-col items-start gap-4">
+					<h3 class="text-xl font-semibold">Titre</h3>
+					<div class="h-auto w-full flex items-center justify-center rounded-lg bg-black/10 p-2">
+						<img src={hello} alt="">
+					</div>
+				</div>
+				<p class="mt-3 text-sm text-white/80 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facere recusandae odio neque porro consectetur saepe, minus reiciendis laboriosam cum. Quidem error natus necessitatibus ducimus laudantium delectus assumenda possimus sunt..</p>
+				<a class="w-full flex justify-end text-white text-sm"
+					href="">Voir plus...</a>
+			</article>
+		</section>
+
+		<a class="flex flex-col items-center justify-start mt-16
+					bg-gradient-to-br from-amber-400 via-orange-400 to-orange-500  
+					font-semibold px-4 py-2 rounded-md shadow text-lg text-black
+					hover:bg-gradient-to-br hover:from-orange-400 hover:via-orange-500 hover:to-orange-500 hover:underline" 
+			href="">Voir plus d'actualités</a>
+
 	</section>
 
 	<section class="flex flex-col items-center px-8 py-8 mx-72 my-16
