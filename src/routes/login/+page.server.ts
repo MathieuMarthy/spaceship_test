@@ -28,8 +28,6 @@ export const actions: Actions = {
       return fail(401, { error: 'Invalid credentials' });
     }
 
-    console.log(argon2.hash('admin'))
-
     const passwordValid = await verifyPassword(
       user.password,
       password
@@ -45,7 +43,7 @@ export const actions: Actions = {
     cookies.set(
       sessionCookie.name,
       sessionCookie.value,
-      sessionCookie.attributes
+      { ...sessionCookie.attributes, secure: false, path: '/', sameSite: 'lax' }
     );
 
     throw redirect(302, '/');

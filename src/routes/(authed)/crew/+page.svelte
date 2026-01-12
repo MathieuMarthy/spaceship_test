@@ -1,16 +1,16 @@
 <script lang="ts">
     import profile from '$lib/assets/img/ship_crew.png';
-    let rank = 'captain';
     let crewName = "3IL";
 
+	export let data;
 </script>
 
 <head>
-    <title>Gérer mon crew</title>
+    <title>Gérer mon équipage</title>
 </head>
 
 <div class="min-h-90 flex flex-col items-center justify-center p-6">
-    {#if rank === 'unaffiliated'}
+    {#if data.user.rank === 'unaffiliated'}
         <main class="w-full max-w-lg p-8 mt-20 mb-20 rounded-tl-3xl rounded-br-3xl bg-white/10 border border-white/6 shadow-lg backdrop-blur-md">
 
             <div class="flex items-center gap-4 mb-10">
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <form method="post" class="space-y-4">
+            <form method="post" class="space-y-4" action="/crew/create">
                 <fieldset class="space-y-4 border-0 p-0">
                     <legend class="sr-only">Créer votre équipage</legend>
                     <label for="crew_name" class="block text-md mb-1 font-bold text-white">Nom d'équipage</label>
@@ -32,6 +32,17 @@
                             id="crew_name"
                             name="crew_name"
                             value="3IL"
+                            required
+                            class="w-full rounded-lg
+                    bg-white/3 border border-white/6 text-white placeholder-sky-200/50 
+                    focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    />
+                    <label for="ship_name" class="block text-md mb-1 font-bold text-white">Nom du vaisseau</label>
+                    <input
+                            type="text"
+                            id="ship_name"
+                            name="ship_name"
+                            value="USS Enterprise"
                             required
                             class="w-full rounded-lg
                     bg-white/3 border border-white/6 text-white placeholder-sky-200/50 
@@ -56,7 +67,7 @@
         </main>
 
     {:else}
-        {#if rank === 'captain'}
+        {#if data.user.rank === 'captain'}
             <main class="w-full max-w-lg p-8 mt-20 mb-20 rounded-tl-3xl rounded-br-3xl bg-white/10 border border-white/6 shadow-lg backdrop-blur-md">
 
                 <div class="flex items-center gap-4 mb-10">
@@ -68,17 +79,16 @@
                         <p class="text-sm text-sky-200">Ajoutez des membres à votre équipage</p>
                     </div>
                 </div>
-                <form method="post" class="space-y-4">
+                <form method="post" class="space-y-4" action="/crew/add-member">
                     <div class="flex items-center justify-between mb-12">
 
                         <fieldset class="space-y-4 border-0 p-0">
                             <legend class="sr-only">Membre à ajouter</legend>
-                            <label for="crew_name" class="block text-md mb-1 font-bold text-white">Nom
-                                d'utilisateur</label>
+                            <label for="email" class="block text-md mb-1 font-bold text-white">Email</label>
                             <input
                                     type="text"
-                                    id="crew_name"
-                                    name="crew_name"
+                                    id="email"
+                                    name="email"
                                     value="3IL"
                                     required
                                     class="w-full rounded-lg
