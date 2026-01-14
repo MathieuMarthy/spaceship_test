@@ -9,3 +9,29 @@
         @apply p-2 hover:underline hover:text-white;
     }
 }
+
+/* Focus theme global - use OKLCH color and apply to all keyboard focusable objects */
+:root {
+    /* base color requested by user */
+    --focus-ring-color: oklch(0.75 0.183 55.934);
+    /* semi-transparent variant used for outlines/shadows */
+}
+
+/* Apply a visible ring for keyboard users only (modern browsers) */
+:focus-visible {
+    outline: none !important;
+    /* box-shadow: 0 0 0 4px var(--focus-ring-color) !important; */
+    border-radius: 0.25rem;
+}
+
+/* Fallback for environments without :focus-visible support */
+:focus {
+    outline: 2px solid var(--focus-ring-color) !important;
+    outline-offset: 2px;
+}
+
+/* Keep previous sr-only helper visible when focused */
+.sr-only.focus\:not-sr-only:focus-visible {
+    outline: none;
+    /* box-shadow: 0 0 0 4px var(--focus-ring-color); */
+}
