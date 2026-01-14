@@ -20,7 +20,7 @@
             </div>
         </div>
         
-        <form method="post" class="space-y-4">
+        <form method="post" class="space-y-4" action="/manage_account">
             <fieldset class="space-y-4 border-0 p-0">
                 <legend class="sr-only">Créer votre compte</legend>
                 <label for="username" class="block text-md mb-1 font-bold text-white">Nom d'utilisateur*</label>

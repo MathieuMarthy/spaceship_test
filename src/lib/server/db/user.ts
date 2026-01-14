@@ -61,6 +61,36 @@ export const UserRepository = {
       });
     });
   },
+
+  async updateUser(
+    userId: bigint,
+    data: Prisma.UserUpdateInput
+  ) {
+    return prisma.user.update({
+      where: { id: userId },
+      data
+    });
+  },
+
+
+  async deleteUserCompletely(userId: bigint) {
+    return prisma.$transaction(async (tx) => {
+      await tx.session.deleteMany({
+        where: { userId }
+      });
+
+      await tx.user.update({
+        where: { id: userId },
+        data: {
+          crewId: null
+        }
+      });
+
+      await tx.user.delete({
+        where: { id: userId }
+      });
+    });
+  },
   
   create(data: {
     username: string;

@@ -51,6 +51,40 @@ export const CrewRepository = {
     return result._sum.points ?? 0n;
   },
 
+  async getTopCrewsWithPoints(limit: number) {
+    const crewsWithPoints = await prisma.user.groupBy({
+      by: ['crewId'],
+      where: {
+        crewId: {
+          not: null,
+        },
+      },
+      _sum: {
+        points: true,
+      },
+      orderBy: {
+        _sum: {
+          points: 'desc',
+        },
+      },
+      take: limit,
+    });
+
+    const crews = await prisma.crew.findMany({
+      where: {
+        id: {
+          in: crewsWithPoints.map(c => c.crewId!),
+        },
+      },
+    });
+
+    return crewsWithPoints.map(cwp => ({
+      crew: crews.find(c => c.id === cwp.crewId),
+      points: cwp._sum.points ?? 0n,
+    }));
+  },
+
+
   async getCrewBadges(crewId: bigint) {
     return prisma.userBadge.findMany({
       where: {

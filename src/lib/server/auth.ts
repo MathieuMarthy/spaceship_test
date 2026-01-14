@@ -15,6 +15,10 @@ const adapter = new PrismaAdapter(
 	prisma.user
 );
 
+export async function hashPassword(password: string) {
+  return argon2.hash(password);
+}
+
 export const auth = new Lucia(adapter, {
 	sessionCookie: {
 		attributes: {

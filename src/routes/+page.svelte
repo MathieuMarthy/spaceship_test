@@ -17,12 +17,15 @@
 		<p class="text-lg text-white">Au sein d'un vaisseau spatial isolé, trouver des solutions à face à des problématiques du numérique.</p>
 
 		<div class="w-9/10 flex flex-col items-start justify-start text-left gap-2 my-32">
-			<a class="bg-gradient-to-br from-amber-400 via-orange-400 to-orange-500 
+			
+				<a class="bg-gradient-to-br from-amber-400 via-orange-400 to-orange-500 
 						font-semibold px-4 py-2 rounded-md shadow text-lg text-black
 						hover:bg-gradient-to-br hover:from-orange-400 hover:via-orange-500 hover:to-orange-500 hover:underline" 
-				href="/register">Commencer l'aventure ici</a>
+				href={data.user ? (data.user.crewId !== null ? '/vessel' : '/crew') : '/register'}>Commencer l'aventure ici</a>
 		
-			<a class="text-white/80 text-sm hover:text-white hover:underline px-5" href="/login">Déjà inscrit ? Connectez-vous ici</a>
+			{#if data.user}
+				<a class="text-white/80 text-sm hover:text-white hover:underline px-5" href="/login">Déjà inscrit ? Connectez-vous ici</a>
+			{/if}
 		</div>
 
 		<div class="flex flex-col justify-center items-center w-full">
