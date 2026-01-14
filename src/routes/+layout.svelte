@@ -38,7 +38,7 @@
 				<li class="nav-link"><a href="/notifications"><img class="h-5" src="{notification_icon}" alt=""></a></li>
 				<li class="nav-link font-bold"><a href="/manage_account">Profil</a></li>
 				<li class="nav-link"><form method="POST" action="/logout">
-					<button>Déconnexion</button>
+					<button class="cursor-pointer">Déconnexion</button>
 				</form></li>
 			{:else}
 				<li class="nav-link font-bold"><a href="/login">Connexion</a></li>
