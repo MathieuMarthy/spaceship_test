@@ -31,7 +31,7 @@
 {#if true}
 
 <main class="min-h-90 justify-center items-start">
-	<section class="w-screen flex flex-col items-center px-72 pt-4 pb-4 shadow-sm">
+	<section class="w-screen flex flex-col items-center px-72 pt-4 pb-4">
 		<h1 class="bg-white/10 text-4xl font-semibold text-white py-2 px-6 rounded-lg">Vaisseau</h1>
 		<div class="w-full text-white py-4">
 			<p>Vous appartenez au vaisseau : <span>[nom du vaisseau]</span></p>

@@ -4,10 +4,10 @@
 
 <title>Actualités</title>
 
-<section class="w-screen flex flex-col items-center px-72 py-24 bg-sky-950 shadow-sm">
-  <h2 class="text-3xl font-semibold mb-16 text-white">Actualités</h2>
+<section class="w-screen flex flex-col items-center px-72 pt-4 pb-4">
+	<h1 class="bg-white/10 text-4xl font-semibold text-white py-2 px-6 rounded-lg">Actualités</h1>
 
-  <section class="grid grid-cols-3 gap-8 w-full">
+	<section class="w-screen grid grid-cols-3 gap-8 items-center px-72 pt-4 pb-4">
     {#each data.news as item}
       <article class="rounded-lg bg-white/10 border border-white/6 shadow-lg backdrop-blur-md p-6 text-white flex flex-col">
         

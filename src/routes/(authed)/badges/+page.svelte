@@ -1,1 +1,6 @@
-<h1 class="text-3xl font-bold">Badges</h1>
+<title>Badges</title>
+
+<section class="w-screen flex flex-col items-center px-72 pt-4 pb-4">
+    <h1 class="bg-white/10 text-4xl font-semibold text-white py-2 px-6 rounded-lg">Badges</h1>
+
+</section>

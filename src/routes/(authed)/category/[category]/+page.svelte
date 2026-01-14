@@ -13,7 +13,7 @@
 							 absolute shadow-lg font-semibold text-white rounded-lg py-2 px-4 m-4">
 		← Retourner au vaisseau
 	</a>
-	<section class="w-screen flex flex-col items-center px-72 pt-4 pb-4 shadow-sm">
+	<section class="w-screen flex flex-col items-center px-72 pt-4 pb-4">
 		<h1 class="bg-white/10 text-4xl font-semibold text-white py-2 px-6 rounded-lg">{data.categoryAct.name ?? '...'}</h1>
 		<p class="text-white py-4">{data.categoryAct.description ?? ''}</p>
 		
