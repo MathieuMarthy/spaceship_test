@@ -54,6 +54,7 @@ model Badge {
 model UserBadge {
   user_id  BigInt
   badge_id BigInt
+  unlockedAt DateTime @default(now())
 
   user  User  @relation(fields: [user_id], references: [id])
   badge Badge @relation(fields: [badge_id], references: [id])
