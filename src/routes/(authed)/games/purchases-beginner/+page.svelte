@@ -8,13 +8,6 @@
         step = newStep;
         steps.push(step);
     }
-
-    let choices_10_0 = [
-            "Oui, je ferais tout pour réussir cette mission.",
-            "Je suis bien obligé d'accepter.",
-            "Je préfèrerais rentrer chez moi."
-        ];
-
 </script>
 
 <p>Etapes : {steps.join(' > ')}</p>
@@ -30,7 +23,7 @@
         text="IA : Atterrissage en cours"
         image="/game/purchases-beginner/game_img_test.jpg"
         imageAlt="porte de vaisseau spatiale fermée"
-        audio="/game/purchases-beginner/audio/0.m4a"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
         duration=-1
         onValidate={handleValidate}
     />
@@ -138,11 +131,15 @@
     <GameStep
         nextStep="11"
         text="IA : Acceptez-vous cette mission ?"
-        choices={choices_10_0}
+        choices={[
+            "Oui, je ferais tout pour réussir cette mission.",
+            "Je suis bien obligé d'accepter.",
+            "Je préfèrerais rentrer chez moi."
+        ]}
         image="/game/purchases-beginner/game_img_test.jpg"
         imageAlt="la lumière deviens moins éblouissante"
         audio="/game/purchases-beginner/audio/0_1.mp3"
-        duration=-1
+        audioLoop=1
         onValidate={handleValidate}
     />
 {/if}
@@ -187,6 +184,148 @@
         imageAlt="la lumière deviens moins éblouissante"
         audio="/game/purchases-beginner/audio/0_1.mp3"
         duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+
+{#if step == "12_0"}
+    <GameStep
+        nextStep="13"
+        text="IA : Recherche en cours..."
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "13_0"}
+    <GameStep
+        nextStep="14"
+        text="IA : Recherche en cours... recherche en cours..."
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "14_0"}
+    <GameStep
+        nextStep="15"
+        text="IA : Recherche en cours... recherche en cours... recherche en cours..."
+        choices={["bon..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "15_0"}
+    <GameStep
+        nextStep="16"
+        text="IA : Recherche terminée. Notre contact nous attend à un kilomètre à l'Ouest de votre position."
+        choices={["Bien, allons-y"]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "16_0"}
+    <GameStep
+        nextStep="17"
+        text=""
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0"}
+    <GameStep
+        nextStep="17_0"
+        text="IA : Pour  votre développement personel, souhaitez-vous en sevoir plus sur la planete Koziris ?"
+        choices={["Pourquoi pas ca m'occupera", "je préfèrerais qu'on se concentre sur la mission"]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_0"}
+    <GameStep
+        nextStep="17_0_0"
+        text="IA : Koziris à un climat aride, seul zone vivable dans une cuvette entourée de reliefs élevé protégé des vents violents sur le reste de la planète, où vous vous trouvé."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_0_0"}
+    <GameStep
+        nextStep="17_0_0_0"
+        text="IA : La composition unique de son athmosphère rend possible la culture du kepa, Celui-ci aurait la capacité d'allonger la durée de vie si consommé régulièrement."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_0_0_0"}
+    <GameStep
+        nextStep="17_0_0_0_0"
+        text="IA : C'est la seule plante qui est adapté à l'envirronement et elle est ainsi la source unique en nourriture et en eau pour la population."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_0_0_0_0"}
+    <GameStep
+        nextStep="17_0_0_0_0_0"
+        text="IA : Celle-ci est l'une des plus pauvre de la galaxy suites aux récentes interventions violente d'organisme extérieure interressé par le controle de la culture du fruit."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_0_0_0_0_0"}
+    <GameStep
+        nextStep="17_0_0_0_0_0_0"
+        text="IA : Actuellement c'est la faction Al'Cata qui à pris le controle de l'unique culture après de nombreux exactions. La population est donc entièrment dépendant de leur production."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_0_0_0_0_0_0"}
+    <GameStep
+        nextStep="17_0_0_0_0_0_0_0"
+        text="IA : Actuellement c'est la faction Al'Cata qui à pris le controle de l'unique culture après de nombreux exactions. La population est donc entièrment dépendant de leur production."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
         onValidate={handleValidate}
     />
 {/if}
