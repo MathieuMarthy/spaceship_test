@@ -1,6 +1,7 @@
 import type { Actions } from './$types';
 import { prisma } from '$lib/server/prisma';
 import { UserRepository } from '$lib/server/db/user';
+import { redirect } from '@sveltejs/kit';
 
 export const actions: Actions = {
   default: async ({ request, locals }) => {
@@ -24,7 +25,7 @@ export const actions: Actions = {
 
       await UserRepository.addGameRewardPoints(userId, 1n)
 
-      return { success: true };
+      throw redirect(302, '/vessel');
     }
   }
 };
