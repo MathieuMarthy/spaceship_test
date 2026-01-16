@@ -740,3 +740,4 @@
         onValidate={gameFinished}
     />
 {/if}
+</section>
