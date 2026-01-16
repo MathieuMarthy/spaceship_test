@@ -63,21 +63,11 @@
 </script>
 
 <main class="w-screen flex flex-col items-center px-72 py-8">
-<<<<<<< HEAD
-    <section class="w-full p-6 bg-black/20 backdrop-blur-sm rounded-2xl bg-white/10 border border-white/6 shadow-lg backdrop-blur-md flex flex-col items-center gap-6">
-        <div class="w-full flex justify-start">
-            <button class="px-1 py-1" onclick={toggleMute}>
-                <img 
-                    src={isMuted ? sound_off : sound_on} 
-                    class="w-10" 
-                    alt={isMuted ? 'son coupé' : 'son activé'}
-                >
-=======
     <section class="w-full min-h-150 p-6 bg-black/20 backdrop-blur-sm rounded-2xl bg-white/10 border border-white/6 shadow-lg backdrop-blur-md flex flex-col items-center gap-2">
             <div class="w-full flex justify-start">
             <button 
                 class="px-1 py-1"
-                on:click={(e) => {
+                onclick={(e) => {
                     const btn = e.currentTarget;
                     const img = btn.querySelector('img');
                     if (!img) return;
@@ -90,7 +80,6 @@
                 }}
             >
                 <img src={sound_on} data-muted="false" class="w-10" alt="son activé">
->>>>>>> NOLAN/game
             </button>
         </div>
         {#if image}

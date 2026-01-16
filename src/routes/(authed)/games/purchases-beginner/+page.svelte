@@ -72,12 +72,7 @@
         image="/game/purchases-beginner/6-SPACESHIP_DOOR_OPENING_3.png"
         imageAlt="la porte continue de s'ouvrir"
         audio="/game/purchases-beginner/audio/spaceship-door-opening.mp3"
-<<<<<<< HEAD
-        duration=-1
-        audioMuted={audioMutedAll}
-=======
         duration=1
->>>>>>> NOLAN/game
         onValidate={handleValidate}
     />
 {/if}
@@ -87,22 +82,7 @@
         text=""
         image="/game/purchases-beginner/6-SPACESHIP_DOOR_OPENING_3.png"
         imageAlt=""
-<<<<<<< HEAD
-        audio="/game/purchases-beginner/audio/0_1.mp3"
-        duration=-1
-        audioMuted={audioMutedAll}
-        onValidate={handleValidate}
-    />
-{/if} -->
-{#if step == "4_0"}
-    <GameStep
-        nextStep="6"
-        text=""
-        image="/game/purchases-beginner/game_img_test.jpg"
-        imageAlt="la porte est ouverte et une lumère vive entre dans le vaisseau"
-=======
         audio=""
->>>>>>> NOLAN/game
         duration=1
         audioMuted={audioMutedAll}
         onValidate={handleValidate}
