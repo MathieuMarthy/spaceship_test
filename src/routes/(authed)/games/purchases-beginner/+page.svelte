@@ -18,9 +18,16 @@
         steps = [];
     }
 
-    function gameFinished() {
-        // Logic to handle game completion, e.g., navigate to next level
-    }
+    // async function gameFinished() {
+    //     const formData = new FormData();
+    //     formData.append('action', 'finishGame');
+
+    //     await fetch('/games/purchases-beginner', {
+    //         method: 'POST',
+    //         body: formData
+    //     });
+    // }
+
 </script>
 
 <p class="bg-black/10 text-white text-sm px-2 py-1 m-2 rounded-lg">Etapes : {steps.join(' > ')}</p>
@@ -729,6 +736,7 @@
     />
 {/if}
 {#if step == "30_1_0_0_0_0_0_0_0"}
+    <form method="POST">
     <GameStep
         nextStep="1000"
         text="Fin du niveau. Félicitations, vous avez réussi le niveau. Vous pouvez passer au suivant pour explorer de nouvelles situations."
@@ -737,7 +745,13 @@
         imageAlt="fondu noir"
         audio="/game/purchases-beginner/audio/0_1.mp3"
         audioLoop=1
-        onValidate={gameFinished}
     />
+
+    <!-- champ caché pour identifier l’action -->
+    <input type="hidden" name="action" value="finishGame" />
+
+    <button type="submit" class="hidden"></button>
+    </form>
+
 {/if}
 </section>

@@ -77,7 +77,7 @@
 					bg-gradient-to-br from-amber-400 via-orange-400 to-orange-500  
 					font-semibold px-4 py-2 rounded-md shadow text-lg text-black
 					hover:bg-gradient-to-br hover:from-orange-400 hover:via-orange-500 hover:to-orange-500 hover:underline" 
-			href="">Voir plus d'actualités</a>
+			href="/news">Voir plus d'actualités</a>
 
 	</section>
 
