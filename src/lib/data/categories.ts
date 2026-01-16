@@ -51,6 +51,7 @@ export const categories: Record<string, Category> = {
         description: "Bonnes pratiques d'achats responsables pour le numérique : critères de sélection, évaluation fournisseurs, écoconception des cahiers des charges et stratégies d'approvisionnement durable.",
         short_description: 'Approvisionnement responsable et critères de sélection.',
         link: 'purchases',
+        levels: [levels.purshases_beginner, levels.purshases_intermediate, levels.purshases_expert],
         icon: '🛒'
     },
     storage: {
