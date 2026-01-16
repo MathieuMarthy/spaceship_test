@@ -17,17 +17,6 @@
         step = null;
         steps = [];
     }
-
-    // async function gameFinished() {
-    //     const formData = new FormData();
-    //     formData.append('action', 'finishGame');
-
-    //     await fetch('/games/purchases-beginner', {
-    //         method: 'POST',
-    //         body: formData
-    //     });
-    // }
-
 </script>
 
 <p class="bg-black/10 text-white text-sm px-2 py-1 m-2 rounded-lg">Etapes : {steps.join(' > ')}</p>
