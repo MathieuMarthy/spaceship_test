@@ -1,4 +1,6 @@
 <script>
+    import sound_on from '$lib/assets/img/sound-loud-black.svg';
+    import sound_off from '$lib/assets/img/sound-mute-black.svg';
     let { nextStep, text, choices, image, imageAlt, audio, audioLoop, duration, onValidate, audioTime = 0 } = $props();
     
     let result;
@@ -43,7 +45,24 @@
 </script>
 
 <main class="w-screen flex flex-col items-center px-72 py-8">
-    <section class="w-full p-6 bg-black/20 backdrop-blur-sm rounded-2xl bg-white/10 border border-white/6 shadow-lg backdrop-blur-md flex flex-col items-center gap-6">            
+    <section class="w-full p-6 bg-black/20 backdrop-blur-sm rounded-2xl bg-white/10 border border-white/6 shadow-lg backdrop-blur-md flex flex-col items-center gap-6">
+        <div class="w-full flex justify-start">
+            <button 
+                class="px-1 py-1"
+                onclick={(e) => {
+                    const btn = e.currentTarget;
+                    const img = btn.querySelector('img');
+                    const currentlyMuted = img.dataset.muted === 'true';
+                    const newMuted = !currentlyMuted;
+                    img.src = newMuted ? sound_off : sound_on;
+                    img.alt = newMuted ? 'son coupé' : 'son activé';
+                    img.dataset.muted = String(newMuted);
+                    if (audioElement) audioElement.muted = newMuted;
+                }}
+            >
+                <img src={sound_on} data-muted="false" class="w-10" alt="son activé">
+            </button>
+        </div>
         {#if image}
             <div class="overflow-hidden rounded-lg border border-white/5 shadow-inner">
                 <img src={image} alt="{imageAlt}" class="max-w-full h-auto object-cover max-h-[400px]"/>
