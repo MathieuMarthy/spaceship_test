@@ -50,8 +50,8 @@
             </div>
         {/if}
     
-        <div class="w-full text-center">
-            <p class="text-white text-xl leading-relaxed font-light italic">
+        <div class="w-full flex justify-center text-center">
+            <p class="max-w-2/3 text-white text-xl font-light italic">
                 {text}
             </p>
         </div>
@@ -69,9 +69,9 @@
             {#each choices as choice, i}
                 <button 
                     onclick={() => { result = i; handleClick(result); }}
-                    class="px-6 py-3 bg-gradient-to-r from-sky-600 to-sky-700 hover:from-orange-500 hover:to-amber-500 
-                            text-white font-medium rounded-lg shadow-lg transition-all duration-300 
-                            transform hover:-translate-y-1 active:scale-95 border border-white/10"
+                    class="px-5 py-2 bg-gradient-to-br from-emerald-400 via-indigo-400 to-indigo-500 
+                        font-semibold rounded-lg shadow 
+                        hover:bg-gradient-to-br hover:from-indigo-400 hover:via-indigo-500 hover:to-indigo-600"
                 >
                     {choice}
                 </button>

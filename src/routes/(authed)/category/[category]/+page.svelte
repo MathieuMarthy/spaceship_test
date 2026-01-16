@@ -30,7 +30,7 @@
 								<p>{level.description}</p>
 								<div class="flex flex-row self-end items-center gap-4 mt-4">
 									<span class="sr-only">Durée estimée :</span><p>⏳ {level.duration} minutes</p> 
-									<a href="./{data.categoryAct.link}/{level.link}"
+									<a href="../games/{data.categoryAct.link}-{level.link}"
 									class="bg-gradient-to-br from-emerald-400 via-indigo-400 to-indigo-500 text-black font-semibold px-5 py-2 rounded-lg shadow hover:bg-gradient-to-br hover:from-indigo-400 hover:via-indigo-500 hover:to-indigo-600"
 									aria-label={`Jouer au niveau ${level.name}`}
 									>
