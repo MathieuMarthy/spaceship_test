@@ -102,6 +102,7 @@
 				   bg-black/30 backdrop-blur-md shadow-2xl shadow-black/10 text-white/60">
 		<p>© 2025 Spaceship Inc.</p>
 		
+		
 		<ul class="flex flex-col gap-1 p-2">
 			<li class="footer-link"><a href="/accessibility">Accessibilité</a></li>
 			<li class="footer-link"><a href="/terms">Conditions d'utilisation</a></li>
@@ -111,8 +112,8 @@
 		<!-- Réseaux -->
 		<ul class="flex flex-col gap-1 p-2">
 			<li class="footer-link"><a href="https://www.linkedin.com" target="_blank">Linkedin</a></li>
-			<li class="footer-link"><a href="https://x.com" target="_blank">X</a></li>
 			<li class="footer-link"><a href="https://youtube.com" target="_blank">Youtube</a></li>
+			<li>Nous contacter: mattpac0309@gmail.com</li>
 		</ul>
 	</footer>
 </div>
