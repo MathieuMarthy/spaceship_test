@@ -128,14 +128,9 @@
         text=""
         image="/game/purchases-beginner/8-SPACESHIP_DOOR_OPENED_2.png"
         imageAlt="la lumière est éblouissante"
-<<<<<<< HEAD
         audio="/game/purchases-beginner/audio/0_1.mp3"
         duration=1
         audioMuted={audioMutedAll}
-=======
-        audio="/game/purchases-beginner/audio/footsteps-metal.mp3"
-        duration=2
->>>>>>> NOLAN/game
         onValidate={handleValidate}
     />
 {/if}
@@ -146,12 +141,8 @@
         image="/game/purchases-beginner/9-SPACESHIP_DOOR_OPENED_3.png"
         imageAlt="la lumière deviens moins éblouissante"
         audio="/game/purchases-beginner/audio/footsteps-metal.mp3"
-<<<<<<< HEAD
         duration=-1
         audioMuted={audioMutedAll}
-=======
-        duration=2
->>>>>>> NOLAN/game
         onValidate={handleValidate}
     />
 {/if}
