@@ -8,16 +8,25 @@
         step = newStep;
         steps.push(step);
     }
+
+    function resetGame() {
+        step = null;
+        steps = [];
+    }
+
+    function gameFinished() {
+        // Logic to handle game completion, e.g., navigate to next level
+    }
 </script>
 
 <p>Etapes : {steps.join(' > ')}</p>
 {#if !step}
-    <button onclick={() => {handleValidate("0")}} >
+    <button onclick={() => {handleValidate("0_0")}} >
         Commencer le jeu
     </button>
 {/if}
 
-{#if step == "0"}
+{#if step == "0_0"}
     <GameStep
         nextStep="1"
         text="IA : Atterrissage en cours"
@@ -167,7 +176,7 @@
 {/if}
 {#if step == "11_2"}
     <GameStep
-        nextStep="0_2_0"
+        nextStep="11_2"
         text="IA : Je tiens à vous rappeler que conformément aux loi en vigueur sur la planete Luxuria, votre registre d'identité est détenue par l'entreprise."
         image="/game/purchases-beginner/game_img_test.jpg"
         imageAlt="la lumière deviens moins éblouissante"
@@ -176,7 +185,7 @@
         onValidate={handleValidate}
     />
 {/if}
-{#if step == "0_2_0"}
+{#if step == "11_2_0"}
     <GameStep
         nextStep="12"
         text="IA : De plus, si vous êtes en charge d'un vaisseau c'est grace à la bienveillance de notre plus gros actionnaire sur Luxuria, la famille Gouraud, qui voit un potentiel en vous. Tachez de ne pas le décevoir."
@@ -320,12 +329,366 @@
 {#if step == "17_0_0_0_0_0_0_0"}
     <GameStep
         nextStep="17_0_0_0_0_0_0_0"
-        text="IA : Actuellement c'est la faction Al'Cata qui à pris le controle de l'unique culture après de nombreux exactions. La population est donc entièrment dépendant de leur production."
+        text="IA : Cependant, Al'Cata préfère revendre l'ensemble de sa production aux entreprise car le marché est plus lucratif."
         choices={["..."]}
         image="/game/purchases-beginner/game_img_test.jpg"
         imageAlt="la lumière deviens moins éblouissante"
         audio="/game/purchases-beginner/audio/0_1.mp3"
         audioLoop=1
         onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_0_0_0_0_0_0_0"}
+    <GameStep
+        nextStep="18"
+        text="IA : Notre contact n'est autre que [nom de chef chat qui fais peur], le chef de la faction connu pour son comportement manipulateur."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_1"}
+    <GameStep
+        nextStep="17_0_1"
+        text="IA : C'est dommage de ne pas vouloir s'interresser à cette planete, l'entreprise apprecie quand ses employés s'interresse à leur enviroonement de travaille... Jusqu'a une certaine mesures."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "17_0_1_0"}
+    <GameStep
+        nextStep="18"
+        text="IA : ..."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "18_0"}
+    <GameStep
+        nextStep="18_0"
+        text="IA : C'est bon nous sommes arrivés à destination."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+
+{#if step == "18_0_0"}
+    <GameStep
+        nextStep="19"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "19_0"}
+    <GameStep
+        nextStep="20"
+        text="Gardiens : Vous êtes les acheteurs ?"
+        choices={["Oui"]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "20_0"}
+    <GameStep
+        nextStep="21"
+        text="Gardiens : Entrez le chef vous attend."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "21_0"}
+    <GameStep
+        nextStep="22"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "22_0"}
+    <GameStep
+        nextStep="23"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "23_0"}
+    <GameStep
+        nextStep="24"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "24_0"}
+    <GameStep
+        nextStep="25"
+        text="Contact : Installer vous ce sera rapide"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "25_0"}
+    <GameStep
+        nextStep="26"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "26_0"}
+    <GameStep
+        nextStep="27"
+        text="Contact : Notre arrangement de tout mon stock de fruit en échange d'arme marche toujours ? Vous les avez bien ?"
+        choices={["Nous n'avons pas ramené..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "27_0"}
+    <GameStep
+        nextStep="28"
+        text="IA : Je ne vous avais pas prévenu afin de garantir la sécurité de cette mission mais notre entreprise a conclu un accord avec Al'Cata."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "28_0"}
+    <GameStep
+        nextStep="29"
+        text="IA : Nous n'étions pas les seuls à être intéressé par les fruit et nous avons donc conclus un arrangement. Les fruit en échange de simple armes."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "29_0"}
+    <GameStep
+        nextStep="30"
+        text="Contact : Vous avez bien les armes, n'est-ce pas ?"
+        choices={["Oui, nous les avons amené comme convenu", "Euh non, on les a oubliés"]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_0"}
+    <GameStep
+        nextStep="30_0"
+        text="Contact : Parfait, c'est un plaisir que d'avoir des partenaire aussi attentionné que vous"
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_0_0"}
+    <GameStep
+        nextStep="30_0_0"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_0_0_0"}
+    <GameStep
+        nextStep="30_0_0_0"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_0_0_0_0"}
+    <GameStep
+        nextStep="30_0_0_0_0"
+        text="IA : Vous avez réussis mission en achetant l'ensemble du stock de fruit. Félicitation."
+        choices={["Merci"]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt=""
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_0_0_0_0_0"}
+    <GameStep
+        nextStep="30_0_0_0_0_0"
+        text="IA : Quelques semaines après votre passage la population affamé, se révoltera auprès du groupe Al'Cata"
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_0_0_0_0_0_0"}
+    <GameStep
+        nextStep="30_0_0_0_0_0_0"
+        text="IA : En réponse, Al'Cata réprimenda la population via l'usage d'arme puissante dont personne ne sait comment il ont pus en être procuré."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_0_0_0_0_0_0_0"}
+    <GameStep
+        nextStep="0"
+        text="Fin du niveau. Vous n'avez pas réussi ce niveau, peut être faut-il analyser les situations que vous avez rencontrés"
+        choices={["Recommencer le niveau"]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={resetGame}
+    />
+{/if}
+{#if step == "30_1"}
+    <GameStep
+        nextStep="30_1"
+        text="Contact : Quoi ? Vous n'avez pas les armes ? Vous vous moquez de moi ?"
+        choices={["Je crains que oui ... Nous les avons oubliés"]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_1_0"}
+    <GameStep
+        nextStep="30_1_0"
+        text="Contact : Dans ce cas partez. Je finirais bien par trouver une entreprise plus avide que vous"
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="la lumière deviens moins éblouissante"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_1_0_0"}
+    <GameStep
+        nextStep="30_1_0_0"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_1_0_0_0"}
+    <GameStep
+        nextStep="30_1_0_0_0"
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        duration=-1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_1_0_0_0_0"}
+    <GameStep
+        nextStep="30_1_0_0_0_0"
+        text="IA : Vous avez donc fais échouer votre mission ? L'entreprise est très decus de vous. A votre retour vous serez transferez vers des services plus adapté."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_1_0_0_0_0_0"}
+    <GameStep
+        nextStep="30_1_0_0_0_0_0"
+        text="IA : Malgré cet échec, la population pauvre de la planete ne souffrira pas de famine car le stock de vivre restera suffisant"
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_1_0_0_0_0_0_0"}
+    <GameStep
+        nextStep="30_1_0_0_0_0_0_0"
+        text="IA : De plus, Al'Cata restera affaibli après cela et ne sera pas en mesure de continuer d'oppresser la population de la ville. Et il finira par être dissous en pluiseur groupe plus faible."
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={handleValidate}
+    />
+{/if}
+{#if step == "30_1_0_0_0_0_0_0_0"}
+    <GameStep
+        nextStep="1000"
+        text="Fin du niveau. Féliciation vous avez réussis le niveau vous pouvez passer au suivant pour de nouvelles situations"
+        choices={["..."]}
+        image="/game/purchases-beginner/game_img_test.jpg"
+        imageAlt="fondu noir"
+        audio="/game/purchases-beginner/audio/0_1.mp3"
+        audioLoop=1
+        onValidate={gameFinished}
     />
 {/if}
