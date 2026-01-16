@@ -1,30 +1,30 @@
-import type { RequestHandler } from './$types';
-import { json } from '@sveltejs/kit';
-import { GameRepository } from '$lib/server/db/game';
+import type { Actions } from './$types';
+import { prisma } from '$lib/server/prisma';
+import { UserRepository } from '$lib/server/db/user';
 
-export const POST: RequestHandler = async ({ request, locals }) => {
-  if (!locals.user) {
-    return json({ error: 'Unauthorized' }, { status: 401 });
-  }
+export const actions: Actions = {
+  default: async ({ request, locals }) => {
+    const formData = await request.formData();
 
-  const { gameId } = await request.json();
+    if (formData.get('action') === 'finishGame') {
+      if (!locals.user) {
+        return { error: 'Not authenticated' };
+      }
 
-  if (!gameId) {
-    return json({ error: 'Missing gameId' }, { status: 400 });
-  }
+      const userId = locals.user.id;
+      const badgeId = 1;
+      
+      await prisma.userBadge.upsert({
+        where: {
+          user_id_badge_id: { user_id : userId, badge_id : badgeId }
+        },
+        update: {},
+        create: { user_id : userId, badge_id : badgeId }
+      });
 
-  try {
-    const result = await GameRepository.completeGame(
-      locals.user.id,
-      BigInt(gameId)
-    );
+      await UserRepository.addGameRewardPoints(userId, 1n)
 
-    return json({
-      success: true,
-      ...result
-    });
-  } catch (err) {
-    console.error(err);
-    return json({ error: 'Unable to complete game' }, { status: 500 });
+      return { success: true };
+    }
   }
 };

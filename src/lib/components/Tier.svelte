@@ -28,12 +28,12 @@
         >
           <img src="{badge.logo}" alt="badge_{badge.tier}">
           <h3 class="font-semibold text-xl">{badge.name}</h3>
-          <p class="text-sm text-white/80 mt-2">
+          <p class="text-sm text-white/90 mt-2">
             {badge.description}
           </p>
 
           {#if badge.unlockedAt}
-            <p class="mt-4 text-xs text-white/60">
+            <p class="mt-4 text-xs text-white/90">
               Débloqué le {new Date(badge.unlockedAt).toLocaleDateString()}
             </p>
           {/if}
