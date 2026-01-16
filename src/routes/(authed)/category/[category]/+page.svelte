@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.categoryAct.name} - [nom du jeu]</title>
+	<title>{data.categoryAct.name} - Green Odyssey </title>
 </svelte:head>
 
 <main class="min-h-90 justify-center items-start">

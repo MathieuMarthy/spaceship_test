@@ -7,12 +7,12 @@
 </script>
 
 <head>
-	<title>Accueil - [nom du jeu]</title>
+	<title>Accueil - Green Odyssey</title>
 </head>
 
 <main class="min-h-90 justify-center items-start">
 	<section class="w-screen flex flex-col items-start px-72 pt-32 pb-4 bg-sky-950 shadow-sm">
-		<h1 class="items-start text-6xl font-bold text-white">Devenez un expert du numérique responsable avec [localhost].</h1>
+		<h1 class="items-start text-6xl font-bold text-white">Devenez un expert du numérique responsable avec Green Odyssey.</h1>
 		<div class="h-1 w-50 bg-orange-400 my-5 shadow"></div>
 		<p class="text-lg text-white">Au sein d'un vaisseau spatial isolé, trouver des solutions à face à des problématiques du numérique.</p>
 

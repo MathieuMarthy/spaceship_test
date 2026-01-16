@@ -8,7 +8,7 @@
 </script>
 
 <head>
-	<title>Gestion du compte - [nom du jeu]</title>
+	<title>Gestion du compte - Green Odyssey</title>
 </head>
 
 <div class="min-h-90 flex flex-col items-center justify-center p-6">
@@ -34,7 +34,7 @@
                     autocapitalize="none"
                     required
 
-                    value="username_test"
+                    value=""
                     class="w-full rounded-lg 
                     bg-white/3 border border-white/6 text-white placeholder-sky-200/50 
                     focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -54,7 +54,7 @@
                     autocomplete="username"
                     autocapitalize="none"
                     
-                    value="username_linkedin_test"
+                    value=""
                     class="w-full rounded-lg 
                     bg-white/3 border border-white/6 text-white placeholder-sky-200/50 
                     focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -68,7 +68,7 @@
                     autocomplete="email"
                     required
         
-                    value="email_test@gmail.com"
+                    value=""
                     class="w-full rounded-lg 
                     bg-white/3 border border-white/6 text-white placeholder-sky-200/50 
                     focus:outline-none focus:ring-2 focus:ring-orange-400"

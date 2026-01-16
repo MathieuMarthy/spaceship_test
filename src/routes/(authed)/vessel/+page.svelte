@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Vaisseau - [nom du jeu]</title>
+	<title>Vaisseau - Green Odyssey</title>
 </svelte:head>
 
 

@@ -1,36 +1,22 @@
 INSERT INTO "News" (titre, description, photo, redirection, "createdAt") VALUES
-('Numérique responsable : réduire son empreinte digitale',
- 'Adopter des pratiques numériques responsables permet de réduire l’impact environnemental de nos activités en ligne, comme optimiser le stockage et limiter les flux de données inutiles.',
- '/images/news/default.png',
- NULL,
- NOW() - interval '10 days'),
-
-('Accessibilité web : rendre son site inclusif',
- 'L’accessibilité est essentielle pour que tout le monde puisse naviguer sur le web. Cela inclut des textes clairs, des contrastes suffisants et des alternatives pour les médias.',
- '/images/news/default.png',
- NULL,
- NOW() - interval '9 days'),
-
-('Écoconception : penser l’impact dès la création',
- 'L’écoconception consiste à intégrer des critères environnementaux dès la conception d’un site ou d’une application, en optimisant le code et les ressources utilisées.',
- '/images/news/default.png',
- NULL,
- NOW() - interval '7 days'),
-
-('Réduire le poids des pages web',
- 'Alléger les pages web, compresser les images et minimiser le code permet d’améliorer la performance tout en réduisant la consommation énergétique.',
- '/images/news/default.png',
- NULL,
- NOW() - interval '5 days'),
-
-('Design inclusif pour tous',
- 'Penser l’expérience utilisateur pour tous, y compris les personnes en situation de handicap, est un pilier de l’accessibilité numérique.',
- '/images/news/default.png',
- NULL,
- NOW() - interval '3 days'),
-
-('Cloud et numérique responsable',
- 'Choisir des services cloud éco-responsables et optimiser les requêtes peut significativement diminuer l’empreinte carbone d’un projet numérique.',
- '/images/news/default.png',
- NULL,
- NOW() - interval '1 day');
+(
+  'Diagnostic et accompagnement des organisations dans la transition numerique responsable',
+  'Un resume du diagnostic realise par Nuageo ainsi que les solutions proposees afin d accompagner les organisations dans leur transition vers le numerique responsable.',
+  '/images/news/numerique_responsable.jpg',
+  'https://nuageo.fr/2025/10/diagnostic-et-accompagnement-des-organisations-dans-la-transition-numerique-responsable/',
+  NOW() - interval '78 days'
+),
+(
+  'Comite scientifique Circularite Textile',
+  'Ce temps d echanges reunira plusieurs chercheurs autour des enjeux reglementaires, organisationnels et methodologiques lies a la responsabilite elargie du producteur.',
+  '/images/news/ecoconception.webp',
+  'https://www.eco-conception.fr/articles/h/comite-scientifique-circularite-textile-rendez-vous-le-28-janvier-a-paris.html',
+  NOW() - interval '2 days'
+),
+(
+  'Accessibilite : le bilan apres la loi de 2005',
+  '20 ans apres le passage de la loi de 2005, quelles sont les aboutissants de cette derniere.',
+  '/images/news/accessibilite.jpg',
+  'https://www.amf.asso.fr/documents-accessibilite-inclusion-quel-bilan-apres-la-loi-2005-/42912',
+  NOW() - interval '367 days'
+)

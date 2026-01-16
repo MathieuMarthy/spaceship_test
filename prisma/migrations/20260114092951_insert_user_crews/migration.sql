@@ -1,6 +1,5 @@
 INSERT INTO "Crew" (id, name, vaisseau) VALUES
-(4, 'Orion', 'Nebula'),
-(5, 'Andromeda', 'Phoenix'),
-(6, 'Cosmos', 'Atlas'),
-(7, 'Nova', 'Odyssey');
+(4, 'ENI', 'USS ENI'),
+(5, 'EPSI', 'EPSIlon'),
+(6, 'My Digital School', 'MDS Spaceship')
 
