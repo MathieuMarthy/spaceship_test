@@ -17,6 +17,8 @@ COPY . .
 ENV NODE_ENV=production
 
 # Build the application
+RUN npx prisma generate
+RUN npx prisma migrate deploy
 RUN npm run build
 
 # Prune dev dependencies
