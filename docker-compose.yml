@@ -14,7 +14,7 @@ services:
       - db
     environment:
       DATABASE_URL: "postgresql://postgres:postgres@db:5432/myapp?schema=public"
-    command: npm run dev -- --host 0.0.0.0 --open false
+    command: /bin/sh -c "npx prisma migrate deploy && npm run dev -- --host 0.0.0.0 --open false"
     networks:
       - app-network
 
@@ -29,7 +29,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data_space_ship:/var/lib/postgresql
     networks:
       - app-network
 
