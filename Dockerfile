@@ -1,23 +1,43 @@
-# Base image
-FROM node:20-bookworm-slim
-
-RUN apt-get update && apt-get install -y \
-  openssl \
-  ca-certificates \
-  && rm -rf /var/lib/apt/lists/*
+# Stage 1: Build
+FROM node:22-alpine AS builder
 
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
-COPY package*.json ./
-RUN npm install
+# Copy package files
+COPY package.json package-lock.json* ./
 
-# Copy source code
+# Install dependencies
+RUN npm ci
+
+# Copy all source files
 COPY . .
 
-# Expose port for Vite dev server
-EXPOSE 5173
+# Build arguments for build-time environment variables
+ENV NODE_ENV=production
 
-# Default command
-CMD ["npm", "run", "dev"]
+# Build the application
+RUN npm run build
+
+# Prune dev dependencies
+RUN npm prune --production
+
+# Stage 2: Production
+FROM node:22-alpine AS runner
+
+# Set working directory
+WORKDIR /app
+
+# Copy necessary files from builder
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Set environment to production
+ENV NODE_ENV=production
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "build"]
